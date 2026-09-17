@@ -1,0 +1,122 @@
+[
+  {
+    "id": "francisco",
+    "name": "Francisco Mercado Rizal",
+    "role": "Father",
+    "birthYear": 1818,
+    "deathYear": 1898,
+    "rizalAgeAtEncounter": 3,
+    "bioSummary": "Placeholder bio: Francisco was a prosperous farmer and tenant of the Dominican-owned hacienda in Calamba. He is remembered as a steady, hardworking provider who valued education for his children. Replace this text with a short, sourced summary.",
+    "sources": ["https://example.org/placeholder/francisco"]
+  },
+  {
+    "id": "teodora",
+    "name": "Teodora Alonso Realonda",
+    "role": "Mother",
+    "birthYear": 1826,
+    "deathYear": 1911,
+    "rizalAgeAtEncounter": 5,
+    "bioSummary": "Placeholder bio: Teodora was Rizal's first teacher and a woman of considerable education and resolve. Her imprisonment became one of the defining injustices of the family's story. Replace this text with a short, sourced summary.",
+    "sources": ["https://example.org/placeholder/teodora"]
+  },
+  {
+    "id": "saturnina",
+    "name": "Saturnina Rizal",
+    "role": "Eldest sister",
+    "birthYear": 1850,
+    "deathYear": 1913,
+    "rizalAgeAtEncounter": 7,
+    "bioSummary": "Placeholder bio: Saturnina, nicknamed Neneng, was the eldest sibling and often acted as a second mother to the younger children. She later supported Rizal's studies abroad. Replace this text with a short, sourced summary.",
+    "sources": ["https://example.org/placeholder/saturnina"]
+  },
+  {
+    "id": "paciano",
+    "name": "Paciano Rizal",
+    "role": "Older brother",
+    "birthYear": 1851,
+    "deathYear": 1930,
+    "rizalAgeAtEncounter": 9,
+    "bioSummary": "Placeholder bio: Paciano was Rizal's closest brother, confidant, and political influence. A follower of the reform movement, he helped finance and protect José's work. Replace this text with a short, sourced summary.",
+    "sources": ["https://example.org/placeholder/paciano"]
+  },
+  {
+    "id": "narcisa",
+    "name": "Narcisa Rizal",
+    "role": "Sister",
+    "birthYear": 1852,
+    "deathYear": 1934,
+    "rizalAgeAtEncounter": 11,
+    "bioSummary": "Placeholder bio: Narcisa, called Sisa by the family, was known for her generosity and later cared for the family's interests. Replace this text with a short, sourced summary.",
+    "sources": ["https://example.org/placeholder/narcisa"]
+  },
+  {
+    "id": "olympia",
+    "name": "Olympia Rizal",
+    "role": "Sister",
+    "birthYear": 1855,
+    "deathYear": 1887,
+    "rizalAgeAtEncounter": 13,
+    "bioSummary": "Placeholder bio: Olympia, nicknamed Ypia, married into the Ubaldo family and died young. Replace this text with a short, sourced summary.",
+    "sources": ["https://example.org/placeholder/olympia"]
+  },
+  {
+    "id": "lucia",
+    "name": "Lucia Rizal",
+    "role": "Sister",
+    "birthYear": 1857,
+    "deathYear": 1919,
+    "rizalAgeAtEncounter": 15,
+    "bioSummary": "Placeholder bio: Lucia, called Lucia, was known within the family for her strong personality. Replace this text with a short, sourced summary.",
+    "sources": ["https://example.org/placeholder/lucia"]
+  },
+  {
+    "id": "maria",
+    "name": "Maria Rizal",
+    "role": "Sister",
+    "birthYear": 1859,
+    "deathYear": 1945,
+    "rizalAgeAtEncounter": 17,
+    "bioSummary": "Placeholder bio: Maria, nicknamed Biang, was a sister close in age to José and figures in several family recollections. Replace this text with a short, sourced summary.",
+    "sources": ["https://example.org/placeholder/maria"]
+  },
+  {
+    "id": "concepcion",
+    "name": "Concepcion Rizal",
+    "role": "Sister",
+    "birthYear": 1862,
+    "deathYear": 1865,
+    "rizalAgeAtEncounter": 19,
+    "bioSummary": "Placeholder bio: Concepcion, affectionately called Concha, died at about three years old; Rizal remembered her death vividly. Replace this text with a short, sourced summary.",
+    "sources": ["https://example.org/placeholder/concepcion"]
+  },
+  {
+    "id": "josefa",
+    "name": "Josefa Rizal",
+    "role": "Sister",
+    "birthYear": 1865,
+    "deathYear": 1945,
+    "rizalAgeAtEncounter": 21,
+    "bioSummary": "Placeholder bio: Josefa, called Panggoy, never married and remained devoted to the family. Replace this text with a short, sourced summary.",
+    "sources": ["https://example.org/placeholder/josefa"]
+  },
+  {
+    "id": "trinidad",
+    "name": "Trinidad Rizal",
+    "role": "Sister",
+    "birthYear": 1868,
+    "deathYear": 1951,
+    "rizalAgeAtEncounter": 23,
+    "bioSummary": "Placeholder bio: Trinidad, nicknamed Trining, was the keeper of family memory and later a member of a women's civic organization. Replace this text with a short, sourced summary.",
+    "sources": ["https://example.org/placeholder/trinidad"]
+  },
+  {
+    "id": "soledad",
+    "name": "Soledad Rizal",
+    "role": "Youngest sister",
+    "birthYear": 1870,
+    "deathYear": 1953,
+    "rizalAgeAtEncounter": 25,
+    "bioSummary": "Placeholder bio: Soledad, called Choleng, was the youngest sibling and became a teacher. Replace this text with a short, sourced summary.",
+    "sources": ["https://example.org/placeholder/soledad"]
+  }
+]
