@@ -4,15 +4,18 @@ interface WaypointProps {
   member: FamilyMember
   index: number
   isActive: boolean
+  intensity: number
 }
 
-export function Waypoint({ member, index, isActive }: WaypointProps) {
+export function Waypoint({ member, index, isActive, intensity }: WaypointProps) {
   const side = index % 2 === 0 ? 'left' : 'right'
+  const opacity = 0.12 + intensity * 0.88
 
   return (
     <section
       id={member.id}
       className={`waypoint waypoint--${side}${isActive ? ' is-active' : ''}`}
+      style={{ opacity }}
       aria-label={`${member.name}, ${member.role}`}
     >
       <article className="waypoint__panel">

@@ -69,10 +69,8 @@ body {
   align-items: center;
   padding: 8vh 8vw;
 
-  /* Hidden until its range is active. */
-  opacity: 0.12;
   transform: translateY(36px);
-  transition: opacity 0.55s ease, transform 0.65s ease;
+  transition: transform 0.65s ease;
 }
 
 .waypoint--left {
@@ -84,7 +82,6 @@ body {
 }
 
 .waypoint.is-active {
-  opacity: 1;
   transform: translateY(0);
 }
 

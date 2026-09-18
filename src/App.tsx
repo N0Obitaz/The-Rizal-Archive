@@ -51,14 +51,29 @@ export default function App() {
           <p className="intro__hint">Scroll ↓</p>
         </div>
 
-        {waypoints.map(({ member }, index) => (
-          <Waypoint
-            key={member.id}
-            member={member}
-            index={index}
-            isActive={index === activeIndex}
-          />
-        ))}
+        {waypoints.map(({ member, range }, index) => {
+          const center = (range.start + range.end) / 2
+          const halfWidth = (range.end - range.start) / 2
+          const dist = Math.abs(progress - center)
+          // Solid in the middle band, fade toward edges.
+          const solidBand = halfWidth * 0.5
+          const fadeBand = halfWidth * 1.5
+          const intensity =
+            dist < solidBand
+              ? 1
+              : dist > fadeBand
+                ? 0
+                : 1 - (dist - solidBand) / (fadeBand - solidBand)
+          return (
+            <Waypoint
+              key={member.id}
+              member={member}
+              index={index}
+              isActive={index === activeIndex}
+              intensity={intensity}
+            />
+          )
+        })}
       </main>
 
       {/* Fixed UI chrome (also above the canvas) */}
