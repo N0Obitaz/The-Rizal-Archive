@@ -44,6 +44,10 @@ const PATH_NODES = [
   new THREE.Vector3(10, 0.05, -10),
   new THREE.Vector3(10, 0.05, 14),
   new THREE.Vector3(30, 0.05, 14),
+  new THREE.Vector3(30, 0.05, -10),
+  new THREE.Vector3(50, 0.05, -10),
+  new THREE.Vector3(50, 0.05, 14),
+  new THREE.Vector3(70, 0.05, 14),
 ]
 
 const pathCurve = new THREE.CurvePath<THREE.Vector3>()
@@ -807,7 +811,7 @@ interface Placement {
   radius: number
 }
 
-const SLOT_SPACING = 7
+const SLOT_SPACING = 5
 const SLOT_MARGIN = 4.5
 /** Gap between the sidewalk's outer edge and the front of a house. */
 const HOUSE_SETBACK = 2.5

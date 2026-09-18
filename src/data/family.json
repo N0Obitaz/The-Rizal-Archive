@@ -1,23 +1,33 @@
 [
   {
     "id": "francisco",
-    "name": "Francisco Mercado Rizal",
+    "name": "Francisco Mercado Rizal II",
     "role": "Father",
     "birthYear": 1818,
     "deathYear": 1898,
+    "dateOfBirth": "May 11, 1818",
+    "dateOfDeath": "January 5, 1898",
     "rizalAgeAtEncounter": 3,
-    "bioSummary": "Placeholder bio: Francisco was a prosperous farmer and tenant of the Dominican-owned hacienda in Calamba. He is remembered as a steady, hardworking provider who valued education for his children. Replace this text with a short, sourced summary.",
-    "sources": ["https://example.org/placeholder/francisco"]
+    "bioSummary": "An independent-minded, serious, and taciturn gentleman. Raised by his mother after his father died when he was eight. He met and married Teodora Alonso in 1848, and they settled in Calamba where he was granted lease of a rice farm in the Dominican-owned haciendas.",
+    "occupation": "Prosperous farmer of sugarcane and rice; local official (cabeza de barangay) in Calamba, Laguna.",
+    "education": "Attended a Latin school in Biñan and the Colegio de San Jose in Manila, where he studied Latin and philosophy.",
+    "causeOfDeath": "Deep grief and old age. Experienced a rapid physical decline due to heartbreak a year after the execution of his son José.",
+    "sources": ["https://en.wikipedia.org/wiki/Francisco_Rizal_Mercado"]
   },
   {
     "id": "teodora",
     "name": "Teodora Alonso Realonda",
     "role": "Mother",
-    "birthYear": 1826,
+    "birthYear": 1827,
     "deathYear": 1911,
+    "dateOfBirth": "November 9, 1827",
+    "dateOfDeath": "August 16, 1911",
     "rizalAgeAtEncounter": 5,
-    "bioSummary": "Placeholder bio: Teodora was Rizal's first teacher and a woman of considerable education and resolve. Her imprisonment became one of the defining injustices of the family's story. Replace this text with a short, sourced summary.",
-    "sources": ["https://example.org/placeholder/teodora"]
+    "bioSummary": "Educated, disciplined, and loving. She came from a well-educated family and was Rizal's first teacher, encouraging his talents and teaching him values through stories. Her imprisonment became one of the defining injustices of the family's story.",
+    "occupation": "Homemaker and family business manager.",
+    "education": "Studied at Colegio de Santa Rosa in Intramuros.",
+    "causeOfDeath": "Tuberculosis.",
+    "sources": ["https://www.filipinaslibrary.org.ph/articles/dona-teodora/"]
   },
   {
     "id": "saturnina",
@@ -25,9 +35,14 @@
     "role": "Eldest sister",
     "birthYear": 1850,
     "deathYear": 1913,
+    "dateOfBirth": "June 4, 1850",
+    "dateOfDeath": "September 14, 1913",
     "rizalAgeAtEncounter": 7,
-    "bioSummary": "Placeholder bio: Saturnina, nicknamed Neneng, was the eldest sibling and often acted as a second mother to the younger children. She later supported Rizal's studies abroad. Replace this text with a short, sourced summary.",
-    "sources": ["https://example.org/placeholder/saturnina"]
+    "bioSummary": "The eldest child, nicknamed Neneng. Responsible and caring, she helped take care of the younger children and later supported Rizal's literary works, helping publish his works in Tagalog.",
+    "occupation": "Supporter of José Rizal's literary works; later involved in publishing his works in Tagalog.",
+    "education": "Studied at La Concordia College in Manila.",
+    "causeOfDeath": "Not clearly identified in historical records.",
+    "sources": ["https://en.wikipedia.org/wiki/Saturnina_Hidalgo"]
   },
   {
     "id": "paciano",
@@ -35,39 +50,59 @@
     "role": "Older brother",
     "birthYear": 1851,
     "deathYear": 1930,
+    "dateOfBirth": "March 9, 1851",
+    "dateOfDeath": "April 13, 1930",
     "rizalAgeAtEncounter": 9,
-    "bioSummary": "Placeholder bio: Paciano was Rizal's closest brother, confidant, and political influence. A follower of the reform movement, he helped finance and protect José's work. Replace this text with a short, sourced summary.",
-    "sources": ["https://example.org/placeholder/paciano"]
+    "bioSummary": "Radical, steadfast, and deeply patriotic — a revolutionary through and through. Quiet and preferred to operate underground. He studied under Father José Burgos and helped publish the Tagalog version of Noli Me Tangere in 1909.",
+    "occupation": "Revolutionary leader and Brigadier General in the Philippine Revolutionary Army; Secretary of Finance in the Departmental Government of Central Luzon; Katipunan member and propagandist for Diariong Tagalog.",
+    "education": "Studied under Father José Burgos, one of the leaders of the secularization movement.",
+    "causeOfDeath": "Tuberculosis in Los Baños, Laguna.",
+    "sources": ["https://kahimyang.com/kauswagan/articles/2697"]
   },
   {
     "id": "narcisa",
     "name": "Narcisa Rizal",
     "role": "Sister",
     "birthYear": 1852,
-    "deathYear": 1934,
+    "deathYear": 1939,
+    "dateOfBirth": "October 29, 1852",
+    "dateOfDeath": "June 24, 1939",
     "rizalAgeAtEncounter": 11,
-    "bioSummary": "Placeholder bio: Narcisa, called Sisa by the family, was known for her generosity and later cared for the family's interests. Replace this text with a short, sourced summary.",
-    "sources": ["https://example.org/placeholder/narcisa"]
+    "bioSummary": "Loving, courageous, and resourceful. She devotedly supported her brother José and preserved his memory. She attempted to maintain contact with him during his imprisonment in Fort Santiago in 1896.",
+    "occupation": "Homemaker and family caretaker.",
+    "education": "Likely received basic home education from her mother, Teodora Alonso.",
+    "causeOfDeath": "Died at approximately 86 years old during the Commonwealth period.",
+    "sources": ["National Historical Commission of the Philippines. Jose Rizal: Letters with Family Members. Manila: NHCP, 2011."]
   },
   {
     "id": "olympia",
-    "name": "Olympia Rizal",
+    "name": "Olimpia Rizal",
     "role": "Sister",
-    "birthYear": 1855,
+    "birthYear": 1854,
     "deathYear": 1887,
+    "dateOfBirth": "December 1854",
+    "dateOfDeath": "September 22, 1887",
     "rizalAgeAtEncounter": 13,
-    "bioSummary": "Placeholder bio: Olympia, nicknamed Ypia, married into the Ubaldo family and died young. Replace this text with a short, sourced summary.",
-    "sources": ["https://example.org/placeholder/olympia"]
+    "bioSummary": "Nicknamed Ypia, she was José's \"stout sister\" whom he affectionately teased. José confided in her about his first love, Segunda Katigbak, and Olimpia served as a mediator between them.",
+    "occupation": "Wife of Silvestre Ubaldo, a telegraph operator; had at least three sons.",
+    "education": "Studied at La Concordia College in Manila, where she was a schoolmate of Segunda Katigbak.",
+    "causeOfDeath": "Complications during childbirth (hemorrhage).",
+    "sources": ["The Kahimyang Project. Olimpia Rizal: the 'Stout' sister of a hero. 2024."]
   },
   {
     "id": "lucia",
     "name": "Lucia Rizal",
     "role": "Sister",
-    "birthYear": 1857,
+    "birthYear": 1856,
     "deathYear": 1919,
+    "dateOfBirth": "December 13, 1856",
+    "dateOfDeath": "December 25, 1919",
     "rizalAgeAtEncounter": 15,
-    "bioSummary": "Placeholder bio: Lucia, called Lucia, was known within the family for her strong personality. Replace this text with a short, sourced summary.",
-    "sources": ["https://example.org/placeholder/lucia"]
+    "bioSummary": "Devoted and resilient. In 1889, her husband Mariano Herbosa died during a cholera epidemic and was denied a Christian burial due to his connection to José. She accompanied José to Dapitan during his exile and remained active in supporting revolutionaries after his execution.",
+    "occupation": "Teacher who provided free education to women in Calamba.",
+    "education": "No reliable record of formal educational background.",
+    "causeOfDeath": "Heart disease. Buried in Manila North Cemetery.",
+    "sources": ["Lucía Rizal: Steadfast Sister in the Rizal Legacy"]
   },
   {
     "id": "maria",
@@ -75,9 +110,14 @@
     "role": "Sister",
     "birthYear": 1859,
     "deathYear": 1945,
+    "dateOfBirth": "June 1859",
+    "dateOfDeath": "September 1, 1945",
     "rizalAgeAtEncounter": 17,
-    "bioSummary": "Placeholder bio: Maria, nicknamed Biang, was a sister close in age to José and figures in several family recollections. Replace this text with a short, sourced summary.",
-    "sources": ["https://example.org/placeholder/maria"]
+    "bioSummary": "Nicknamed Biang, she was one of José's closest and most trusted sisters. A resilient woman and frequent letter recipient, she was a supportive confidante throughout his studies and reform efforts.",
+    "occupation": "Merchant and businesswoman, selling women's wear (sinamay) and dealing in copra.",
+    "education": "Educated primarily at home; her mother Teodora Alonso helped educate the children.",
+    "causeOfDeath": "Exact cause unknown.",
+    "sources": ["https://www.joserizal.com/life/rizal-siblings/"]
   },
   {
     "id": "concepcion",
@@ -85,9 +125,14 @@
     "role": "Sister",
     "birthYear": 1862,
     "deathYear": 1865,
+    "dateOfBirth": "April 19, 1862",
+    "dateOfDeath": "August 16, 1865",
     "rizalAgeAtEncounter": 19,
-    "bioSummary": "Placeholder bio: Concepcion, affectionately called Concha, died at about three years old; Rizal remembered her death vividly. Replace this text with a short, sourced summary.",
-    "sources": ["https://example.org/placeholder/concepcion"]
+    "bioSummary": "Affectionately called Concha, she was only about three years old when she died. José remembered her death vividly — it was the first time he cried because of love and sorrow. They had been close, playing together and sharing childhood memories.",
+    "occupation": "Died at about three years old — too young for any occupation.",
+    "education": "Too young for formal education.",
+    "causeOfDeath": "Died from an illness at about three years old.",
+    "sources": ["https://ancestors.familysearch.org/en/KJ5H-PL3"]
   },
   {
     "id": "josefa",
@@ -95,9 +140,14 @@
     "role": "Sister",
     "birthYear": 1865,
     "deathYear": 1945,
+    "dateOfBirth": "March 19, 1865",
+    "dateOfDeath": "December 10, 1945",
     "rizalAgeAtEncounter": 21,
-    "bioSummary": "Placeholder bio: Josefa, called Panggoy, never married and remained devoted to the family. Replace this text with a short, sourced summary.",
-    "sources": ["https://example.org/placeholder/josefa"]
+    "bioSummary": "Nicknamed Panggoy and later Sumikat, she broke stereotypes as one of the first 29 female members of the Katipunan and stood as President of its women's branch. Born with epilepsy, she refused to let it stop her from helping the revolution.",
+    "occupation": "Teacher and advocate for women's rights.",
+    "education": "No clear information on where she studied; became proficient in English, uncommon for women at the time.",
+    "causeOfDeath": "Died a spinster at age 80.",
+    "sources": []
   },
   {
     "id": "trinidad",
@@ -105,18 +155,28 @@
     "role": "Sister",
     "birthYear": 1868,
     "deathYear": 1951,
+    "dateOfBirth": "June 6, 1868",
+    "dateOfDeath": "May 9, 1951",
     "rizalAgeAtEncounter": 23,
-    "bioSummary": "Placeholder bio: Trinidad, nicknamed Trining, was the keeper of family memory and later a member of a women's civic organization. Replace this text with a short, sourced summary.",
-    "sources": ["https://example.org/placeholder/trinidad"]
+    "bioSummary": "Courageous, compassionate, and patriotic. She joined the Katipunan and helped care for wounded revolutionaries. Their most significant interaction was shortly before José's execution, when he told her there was \"something inside\" a small alcohol stove — the hidden manuscript of Mi Último Adiós.",
+    "occupation": "Revolutionary supporter, civic worker, and women's rights advocate.",
+    "education": "Grew up in the educated Rizal household under the influence of her mother, Teodora Alonso.",
+    "causeOfDeath": "Exact cause not specified in reliable historical sources.",
+    "sources": ["https://kahimyang.com/kauswagan/articles/2745"]
   },
   {
     "id": "soledad",
     "name": "Soledad Rizal",
     "role": "Youngest sister",
     "birthYear": 1870,
-    "deathYear": 1953,
+    "deathYear": 1929,
+    "dateOfBirth": "June 7, 1870",
+    "dateOfDeath": "August 26, 1929",
     "rizalAgeAtEncounter": 25,
-    "bioSummary": "Placeholder bio: Soledad, called Choleng, was the youngest sibling and became a teacher. Replace this text with a short, sourced summary.",
-    "sources": ["https://example.org/placeholder/soledad"]
+    "bioSummary": "The youngest sibling, called Choleng. Among the best-educated of Rizal's sisters, she pursued teaching — a profession José deeply admired. In an 1890 letter, he advised her to be \"a model of virtues and good qualities\" for her students.",
+    "occupation": "Teacher.",
+    "education": "Attended Colegio de la Concordia in Manila. Among the best-educated of Rizal's sisters.",
+    "causeOfDeath": "Natural causes. Spent her later years with her family in Calamba, Laguna.",
+    "sources": ["https://www.scribd.com/document/1003568289/SOLEDAD-RIZAL"]
   }
 ]
