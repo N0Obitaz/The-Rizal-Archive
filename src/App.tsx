@@ -50,9 +50,9 @@ export default function App() {
         {/* Hero section: appears first, scrolls away to reveal the first card. */}
         <div className="intro" style={{ opacity: introOpacity }}>
           <p className="intro__eyebrow">A scrollytelling archive</p>
-          <h1 className="intro__title">Walk with José</h1>
+          <h1 className="intro__title">Walk with Pepe</h1>
           <p className="intro__text">
-            Scroll to follow Rizal from childhood to adulthood as he meets his
+            Scroll to follow Rizal as he meets his
             family along the path.
           </p>
           <p className="intro__hint">Scroll ↓</p>
