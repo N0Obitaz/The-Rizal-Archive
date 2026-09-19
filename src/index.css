@@ -171,11 +171,12 @@ body {
   letter-spacing: 0.1em;
   color: var(--ink-soft);
   cursor: pointer;
-  transition: color 0.2s, border-color 0.2s;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
 }
 
 .brand__nav:hover {
-  color: var(--ink);
+  color: #fff;
+  background-color: var(--accent);
   border-color: var(--accent);
 }
 
@@ -214,19 +215,23 @@ body {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--accent);
+  text-shadow: 0 1px 6px rgba(243, 234, 217, 0.9), 0 0 20px rgba(243, 234, 217, 0.6);
 }
 
 .intro__title {
   margin: 0 0 1rem;
   font-size: clamp(2.4rem, 7vw, 5rem);
   line-height: 1.05;
+  color: var(--ink);
+  text-shadow: 0 2px 12px rgba(243, 234, 217, 0.95), 0 0 40px rgba(243, 234, 217, 0.7);
 }
 
 .intro__text {
   max-width: 32rem;
   margin: 0 0 2rem;
   line-height: 1.6;
-  color: var(--ink-soft);
+  color: var(--ink);
+  text-shadow: 0 1px 8px rgba(243, 234, 217, 0.9), 0 0 20px rgba(243, 234, 217, 0.6);
 }
 
 .intro__hint {
@@ -234,7 +239,8 @@ body {
   font-size: 0.85rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: var(--accent);
+  text-shadow: 0 1px 6px rgba(243, 234, 217, 0.9), 0 0 16px rgba(243, 234, 217, 0.5);
   animation: bob 1.8s ease-in-out infinite;
 }
 
@@ -300,11 +306,12 @@ body {
   font-size: 0.85rem;
   color: var(--ink-soft);
   cursor: pointer;
-  transition: color 0.2s, border-color 0.2s;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
 }
 
 .ft__back:hover {
-  color: var(--ink);
+  color: #fff;
+  background-color: var(--accent);
   border-color: var(--accent);
 }
 
