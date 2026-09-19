@@ -5,6 +5,16 @@ import { GradientTexture, Line, useAnimations, useGLTF } from '@react-three/drei
 import * as THREE from 'three'
 import type { FamilyMember } from '../types'
 import rizalModelUrl from '../model/source/rizal2.glb?url'
+import franciscoModelUrl from '../model/source/Francisco_Mercado_Rizal.glb?url'
+import saturninaModelUrl from '../model/source/Saturnina.glb?url'
+import pacianoModelUrl from '../model/source/paciano_rizal.glb?url'
+import narcisaModelUrl from '../model/source/Narcisa Rizal.glb?url'
+import olympiaModelUrl from '../model/source/Olimpia.glb?url'
+import luciaModelUrl from '../model/source/Lucia.glb?url'
+import mariaModelUrl from '../model/source/Maria.glb?url'
+import soledadModelUrl from '../model/source/Soledad.glb?url'
+import josefaModelUrl from '../model/source/Josefa.glb?url'
+import teodoraModelUrl from '../model/source/Saturnina.glb?url'
 
 /**
  * RizalScene — a deliberately small react-three-fiber scene that replaces the
@@ -93,6 +103,28 @@ const COMPANION_SLOT_LATERAL = -1.2
 const COMPANION_SIDEWALK_LATERAL = ROAD_HALF + SIDEWALK_WIDTH / 2
 const COMPANION_ENTER_DURATION = 1.3
 const COMPANION_LEAVE_DURATION = 1.7
+
+/** Maps family member IDs to their .glb model files. */
+const COMPANION_MODELS: Record<string, string> = {
+  francisco: franciscoModelUrl,
+  teodora: teodoraModelUrl,
+  saturnina: saturninaModelUrl,
+  paciano: pacianoModelUrl,
+  narcisa: narcisaModelUrl,
+  olympia: olympiaModelUrl,
+  lucia: luciaModelUrl,
+  maria: mariaModelUrl,
+  josefa: josefaModelUrl,
+  trinidad: josefaModelUrl,
+  soledad: soledadModelUrl,
+}
+
+/** Per-member scale overrides (default is 0.92). Soledad is a kid. */
+const COMPANION_SCALES: Record<string, number> = {
+  soledad: 0.6,
+}
+/** Target world height for all companion models. */
+const COMPANION_HEIGHT = 2.0
 
 function clamp01(value: number): number {
   return Math.min(1, Math.max(0, value))
@@ -1193,6 +1225,157 @@ function RizalModel({ progressRef }: { progressRef: MutableRefObject<number> }) 
 }
 
 useGLTF.preload(rizalModelUrl)
+useGLTF.preload(franciscoModelUrl)
+useGLTF.preload(saturninaModelUrl)
+useGLTF.preload(pacianoModelUrl)
+useGLTF.preload(narcisaModelUrl)
+useGLTF.preload(olympiaModelUrl)
+useGLTF.preload(luciaModelUrl)
+useGLTF.preload(mariaModelUrl)
+useGLTF.preload(soledadModelUrl)
+useGLTF.preload(josefaModelUrl)
+
+// ---------------------------------------------------------------------------
+// Companion GLB model: loads a pre-made .glb character that walks along the
+// path the same way the primitive Figure does, but with a real skeletal mesh.
+// For models with a "Walk_Formal" clip the playback is driven by movement;
+// otherwise a subtle procedural bob keeps them from looking frozen.
+// ---------------------------------------------------------------------------
+interface CompanionModelProps {
+  progressRef: MutableRefObject<number>
+  modelUrl: string
+  progressOffset?: number
+  lateralOffsetRef: MutableRefObject<number>
+  opacityRef: MutableRefObject<number>
+  baseScale?: number
+}
+
+function CompanionModel({
+  progressRef,
+  modelUrl,
+  progressOffset = 0,
+  lateralOffsetRef,
+  opacityRef,
+  baseScale = 1,
+}: CompanionModelProps) {
+  const group = useRef<THREE.Group>(null)
+  const { scene, animations } = useGLTF(modelUrl)
+  const { actions } = useAnimations(animations, group)
+
+  const yaw = useRef(0)
+  const lastX = useRef<number | null>(null)
+  const lastZ = useRef<number | null>(null)
+  const walkPhase = useRef(0)
+  const activity = useRef(0)
+
+  const point = useMemo(() => new THREE.Vector3(), [])
+  const tangent = useMemo(() => new THREE.Vector3(), [])
+  const right = useMemo(() => new THREE.Vector3(), [])
+
+  // Find any available walk animation — models may use "Walk_Formal", "Walk",
+  // or the first clip in the file.  We normalise to whatever exists.
+  const walkClipName = useMemo(() => {
+    if (animations.some((a) => a.name === 'Walk_Formal')) return 'Walk_Formal'
+    if (animations.some((a) => a.name === 'Walk')) return 'Walk'
+    return animations.length > 0 ? animations[0].name : null
+  }, [animations])
+
+  // Normalize model: scale to COMPANION_HEIGHT, feet at y = 0.
+  const { scale: fitScale, feetY } = useMemo(() => {
+    const box = new THREE.Box3().setFromObject(scene)
+    const size = new THREE.Vector3()
+    box.getSize(size)
+    const s = size.y > 0 ? COMPANION_HEIGHT / size.y : 1
+    return { scale: s, feetY: -box.min.y * s }
+  }, [scene])
+
+  // Start the walk clip once, if present.
+  useEffect(() => {
+    if (!walkClipName) return
+    const action = actions[walkClipName]
+    if (!action) return
+    action.reset()
+    action.setLoop(THREE.LoopRepeat, Infinity)
+    action.play()
+    return () => {
+      action.stop()
+    }
+  }, [actions, walkClipName])
+
+  useFrame((_, delta) => {
+    const p = clamp01(progressRef.current + progressOffset)
+    const lateral = lateralOffsetRef.current
+
+    pathCurve.getPointAt(p, point)
+    pathCurve.getTangentAt(p, tangent)
+    right.set(-tangent.z, 0, tangent.x).normalize()
+
+    const x = point.x + right.x * lateral
+    const z = point.z + right.z * lateral
+
+    let moved = 0
+    if (group.current) {
+      group.current.position.set(x, 0, z)
+      if (lastX.current !== null && lastZ.current !== null) {
+        const dx = x - lastX.current
+        const dz = z - lastZ.current
+        moved = Math.hypot(dx, dz)
+        if (moved > 1e-4) {
+          yaw.current = dampAngle(yaw.current, Math.atan2(dx, dz), 10, delta)
+        }
+        walkPhase.current += moved * WALK_PHASE_PER_UNIT
+      } else {
+        yaw.current = Math.atan2(tangent.x, tangent.z)
+      }
+      group.current.rotation.y = yaw.current
+    }
+    lastX.current = x
+    lastZ.current = z
+
+    const moving = moved > 1e-4
+    activity.current = THREE.MathUtils.damp(activity.current, moving ? 1 : 0, 10, delta)
+
+    // Drive the skeletal clip's speed when available.
+    if (walkClipName) {
+      const action = actions[walkClipName]
+      if (action) {
+        const target = activity.current * 0.9
+        action.timeScale = THREE.MathUtils.damp(action.timeScale, target, 12, delta)
+      }
+    }
+
+    // Sidewalk vs road elevation.
+    const groundY =
+      THREE.MathUtils.smoothstep(Math.abs(lateral), ROAD_HALF - 0.25, ROAD_HALF + 0.25) * 0.18
+
+    // Subtle vertical bob for models that lack a walk clip.
+    const bob = walkClipName
+      ? 0
+      : Math.abs(Math.sin(walkPhase.current)) * 0.04 * activity.current
+
+    if (group.current) {
+      group.current.position.y = groundY + bob
+
+      // Apply opacity to every mesh in the hierarchy.
+      const opacity = opacityRef.current
+      group.current.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          const mat = child.material as THREE.MeshStandardMaterial
+          if (!mat.transparent) mat.transparent = true
+          mat.opacity = opacity
+        }
+      })
+    }
+  })
+
+  return (
+    <group ref={group}>
+      <group position={[0, feetY, 0]} scale={fitScale * baseScale}>
+        <primitive object={scene} />
+      </group>
+    </group>
+  )
+}
 
 // ---------------------------------------------------------------------------
 // Companion transition.
@@ -1254,6 +1437,24 @@ function CompanionActor({ member, leaving, progressRef, onFinished }: CompanionA
     }
   })
 
+  const modelUrl = COMPANION_MODELS[member.id]
+  const baseScale = COMPANION_SCALES[member.id] ?? 0.92
+
+  if (modelUrl) {
+    return (
+      <Suspense fallback={null}>
+        <CompanionModel
+          progressRef={progressRef}
+          modelUrl={modelUrl}
+          progressOffset={COMPANION_SLOT_OFFSET}
+          lateralOffsetRef={lateralRef}
+          opacityRef={opacityRef}
+          baseScale={baseScale}
+        />
+      </Suspense>
+    )
+  }
+
   return (
     <Figure
       progressRef={progressRef}
@@ -1261,7 +1462,7 @@ function CompanionActor({ member, leaving, progressRef, onFinished }: CompanionA
       progressOffset={COMPANION_SLOT_OFFSET}
       lateralOffsetRef={lateralRef}
       opacityRef={opacityRef}
-      baseScale={0.92}
+      baseScale={baseScale}
       phase={((hashString(member.id) % 100) / 100) * Math.PI * 2}
     />
   )

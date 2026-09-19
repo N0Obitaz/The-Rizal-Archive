@@ -1,10 +1,11 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import type { FamilyMember } from './types'
 import familyData from './data/family.json'
 import { buildWaypointRanges, getActiveWaypointIndex } from './lib/path'
 import { usePathProgress } from './hooks/usePathProgress'
 import { RizalScene } from './components/RizalScene'
 import { Waypoint } from './components/Waypoint'
+import { FamilyTree } from './components/FamilyTree'
 
 // The JSON is typed via our FamilyMember interface. Waypoint ranges are
 // derived once from rizalAgeAtEncounter, so layout and animation agree.
@@ -12,6 +13,8 @@ const family = familyData as FamilyMember[]
 const waypoints = buildWaypointRanges(family)
 
 export default function App() {
+  const [page, setPage] = useState<'scrollytelling' | 'family-tree'>('scrollytelling')
+
   // The central primitive: 0 at the top of the page, 1 at the bottom.
   // Unchanged — the same value now also drives the 3D scene.
   const progress = usePathProgress()
@@ -28,6 +31,10 @@ export default function App() {
 
   // Title card fades out over the first sliver of the scroll.
   const introOpacity = Math.max(0, 1 - progress / 0.08)
+
+  if (page === 'family-tree') {
+    return <FamilyTree family={family} onBack={() => setPage('scrollytelling')} />
+  }
 
   return (
     <div className="app">
@@ -79,6 +86,9 @@ export default function App() {
       {/* Fixed UI chrome (also above the canvas) */}
       <header className="brand">
         <span className="brand__title">The Rizal Family Archive</span>
+        <button className="brand__nav" onClick={() => setPage('family-tree')}>
+          Family Tree
+        </button>
       </header>
 
       <div className="progress-bar" aria-hidden="true">
