@@ -62,15 +62,7 @@ export default function App() {
           const center = (range.start + range.end) / 2
           const halfWidth = (range.end - range.start) / 2
           const dist = Math.abs(progress - center)
-          // Solid in the middle band, fade toward edges.
-          const solidBand = halfWidth * 0.5
-          const fadeBand = halfWidth * 1.5
-          const intensity =
-            dist < solidBand
-              ? 1
-              : dist > fadeBand
-                ? 0
-                : 1 - (dist - solidBand) / (fadeBand - solidBand)
+          const intensity = dist < halfWidth ? 1 : 0
           return (
             <Waypoint
               key={member.id}
